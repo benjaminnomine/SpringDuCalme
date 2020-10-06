@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.ducalme.app.models</OriginalElement>
+  <nodes>
+    <node x="340.375" y="561.0">com.ducalme.app.models.Bail</node>
+    <node x="358.5268939393939" y="0.0">com.ducalme.app.models.AbstractEntity</node>
+    <node x="100.875" y="349.0">com.ducalme.app.models.Appartement</node>
+    <node x="398.25" y="349.0">com.ducalme.app.models.Locataire</node>
+    <node x="417.5121212121212" y="170.0">com.ducalme.app.models.Paiement</node>
+    <node x="179.0" y="181.0">com.ducalme.app.models.TypeAppartement</node>
+    <node x="0.0" y="159.0">com.ducalme.app.models.Reparation</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.ducalme.app.models.Paiement" target="com.ducalme.app.models.Locataire">
+      <point x="14.75" y="49.0" />
+      <point x="491.2621212121212" y="329.0" />
+      <point x="484.75" y="329.0" />
+      <point x="1.4210854715202004E-14" y="-71.0" />
+    </edge>
+    <edge source="com.ducalme.app.models.Paiement" target="com.ducalme.app.models.AbstractEntity">
+      <point x="0.0" y="-49.0" />
+      <point x="476.5121212121212" y="139.0" />
+      <point x="458.8602272727273" y="139.0" />
+      <point x="14.333333333333343" y="49.5" />
+    </edge>
+    <edge source="com.ducalme.app.models.Reparation" target="com.ducalme.app.models.Appartement">
+      <point x="19.875" y="60.0" />
+      <point x="99.375" y="309.0" />
+      <point x="158.93055555555554" y="309.0" />
+      <point x="-46.44444444444446" y="-71.0" />
+    </edge>
+    <edge source="com.ducalme.app.models.Appartement" target="com.ducalme.app.models.Reparation">
+      <point x="-92.88888888888891" y="-71.0" />
+      <point x="112.48611111111109" y="329.0" />
+      <point x="19.875" y="329.0" />
+      <point x="-59.625" y="60.0" />
+    </edge>
+    <edge source="com.ducalme.app.models.Bail" target="com.ducalme.app.models.Appartement">
+      <point x="-70.66666666666669" y="-60.0" />
+      <point x="349.2083333333333" y="541.0" />
+      <point x="127.0" y="541.0" />
+      <point x="-78.375" y="71.0" />
+    </edge>
+    <edge source="com.ducalme.app.models.Locataire" target="com.ducalme.app.models.Bail">
+      <point x="21.625" y="71.0" />
+      <point x="506.375" y="521.0" />
+      <point x="455.2083333333333" y="521.0" />
+      <point x="35.333333333333314" y="-60.0" />
+    </edge>
+    <edge source="com.ducalme.app.models.Appartement" target="com.ducalme.app.models.Bail">
+      <point x="26.125" y="71.0" />
+      <point x="231.5" y="521.0" />
+      <point x="384.54166666666663" y="521.0" />
+      <point x="-35.33333333333336" y="-60.0" />
+    </edge>
+    <edge source="com.ducalme.app.models.Appartement" target="com.ducalme.app.models.TypeAppartement">
+      <point x="0.0" y="-71.0" />
+      <point x="-79.125" y="38.0" />
+    </edge>
+    <edge source="com.ducalme.app.models.Bail" target="com.ducalme.app.models.Locataire">
+      <point x="-1.4210854715202004E-14" y="-60.0" />
+      <point x="-64.875" y="71.0" />
+    </edge>
+    <edge source="com.ducalme.app.models.Locataire" target="com.ducalme.app.models.AbstractEntity">
+      <point x="69.19999999999999" y="-71.0" />
+      <point x="553.95" y="329.0" />
+      <point x="555.125" y="329.0" />
+      <point x="555.125" y="139.0" />
+      <point x="487.526893939394" y="139.0" />
+      <point x="43.000000000000036" y="49.5" />
+    </edge>
+    <edge source="com.ducalme.app.models.TypeAppartement" target="com.ducalme.app.models.AbstractEntity">
+      <point x="0.0" y="-38.0" />
+      <point x="284.5" y="129.0" />
+      <point x="401.5268939393939" y="129.0" />
+      <point x="-43.0" y="49.5" />
+    </edge>
+    <edge source="com.ducalme.app.models.TypeAppartement" target="com.ducalme.app.models.Appartement">
+      <point x="26.375" y="38.0" />
+      <point x="310.875" y="309.0" />
+      <point x="251.81944444444446" y="309.0" />
+      <point x="46.44444444444446" y="-71.0" />
+    </edge>
+    <edge source="com.ducalme.app.models.Locataire" target="com.ducalme.app.models.Paiement">
+      <point x="-69.19999999999999" y="-71.0" />
+      <point x="415.55" y="329.0" />
+      <point x="432.2621212121212" y="329.0" />
+      <point x="-44.25" y="49.0" />
+    </edge>
+    <edge source="com.ducalme.app.models.Reparation" target="com.ducalme.app.models.AbstractEntity">
+      <point x="0.0" y="-60.0" />
+      <point x="79.5" y="119.0" />
+      <point x="372.8602272727273" y="119.0" />
+      <point x="-71.66666666666667" y="49.5" />
+    </edge>
+    <edge source="com.ducalme.app.models.Bail" target="com.ducalme.app.models.AbstractEntity">
+      <point x="70.66666666666669" y="-60.0" />
+      <point x="490.5416666666667" y="541.0" />
+      <point x="581.75" y="541.0" />
+      <point x="581.75" y="129.0" />
+      <point x="516.1935606060606" y="129.0" />
+      <point x="71.66666666666669" y="49.5" />
+    </edge>
+    <edge source="com.ducalme.app.models.Appartement" target="com.ducalme.app.models.AbstractEntity">
+      <point x="92.88888888888891" y="-71.0" />
+      <point x="298.2638888888889" y="329.0" />
+      <point x="400.5" y="329.0" />
+      <point x="400.5" y="139.0" />
+      <point x="430.1935606060606" y="139.0" />
+      <point x="-14.333333333333314" y="49.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="422.5" y="336.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
