@@ -29,7 +29,24 @@ public class LocataireService {
         return locataireRepositery.save(locataire);
     }
 
+    public boolean update(Integer id, Locataire locataire) throws Exception {
+        Optional<Locataire> locataireOptional = locataireRepositery.findById(id);
+        if(locataireOptional.isPresent()) {
+            Locataire temp = locataireOptional.get();
+            temp.setNom(locataire.getNom());
+            temp.setPrenom(locataire.getPrenom());
+            temp.setTelephone(locataire.getTelephone());
+            locataireRepositery.save(temp);
+            return true;
+        }
+        else {
+            throw new Exception("Impossible de mettre à jour le locataire.");
+        }
+    }
+
     public void deleteById(Integer id) {
         locataireRepositery.deleteById(id);
     }
+
+
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org" lang="fr">
 <head>
-    <title>Création locataire</title>
+    <title>Création appartement</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
     <link th:href="@{/fontawesome/css/all.min.css}" rel="stylesheet"/>
@@ -18,23 +18,27 @@
         </nav>
         <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
             <div class="row">
-                <form method="post" th:action="@{/locataire/addEdit}" th:object="${locataire}">
+                <form method="post" th:action="@{/appartement/addEdit}" th:object="${appartement}">
                     <div class="form-group">
-                        <label for="nom-field" class="col-form-label">Nom</label>
-                        <input class="form-control" id="nom-field" th:field="*{nom}" type="text" name="nom"/>
+                        <label for="desc-field" class="col-form-label">Description</label>
+                        <input class="form-control" id="desc-field" th:field="*{description}" type="text" name="description"/>
                     </div>
                     <div class="form-group">
-                        <label for="prenom-field">Prénom</label>
-                        <input class="form-control" id="prenom-field" th:field="*{prenom}" type="text" name="prenom"/>
+                        <label for="surface-field">Surface</label>
+                        <input class="form-control" id="surface-field" th:field="*{surface}" type="number" name="surface"/>
                     </div>
                     <div class="form-group">
-                        <label for="telephone-field">Téléphone</label>
-                        <input class="form-control" id="telephone-field" type="text" th:field="*{telephone}" name="telephone" />
+                        <label for="type-field">Type Appartement</label>
+                        <select class="form-control" id="type-field" th:field="*{typeAppartement.id}">
+                            <option th:each="type : ${types}"
+                                    th:value="${type.id}"
+                                    th:utext="${type.type}"></option>
+                        </select>
                     </div>
                     <input type="hidden" id="id" th:field="*{id}">
                     <label>
                         <input type="submit" class="btn btn-success" value="Soumettre"/>
-                        <a class="btn btn-danger pl-2" href="/locataire/index">Annuler</a>
+                        <a href="/appartement/index" class="btn btn-danger pl-2">Annuler</a>
                     </label>
                 </form>
             </div>

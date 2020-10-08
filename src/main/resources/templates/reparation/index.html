@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org" lang="fr">
 <head>
-    <title>Locataires</title>
+    <title>Réparations</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
     <link th:href="@{/fontawesome/css/all.min.css}" rel="stylesheet"/>
@@ -18,24 +18,30 @@
         </nav>
         <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
             <div class="row pb-3">
-                <a class="nav-item" href="/locataire/ajout">Ajouter locataire</a>
+                <a class="nav-item" href="/reparation/ajout">Faire demande réparation</a>
             </div>
             <div>
                 <table class="table table-responsive table-striped">
                     <thead class="thead-dark">
                         <tr>
-                            <th>Nom</th>
-                            <th>Prénom</th>
-                            <th>Téléphone</th>
+                            <th>Id</th>
+                            <th>Description</th>
+                            <th>Date de demande</th>
+                            <th>Date de réalisation attendue</th>
+                            <th>Status</th>
+                            <th>Appartement concerné (numéro porte)</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr th:each="locataire : ${locataires}">
-                            <td th:text="${locataire.nom}"></td>
-                            <td th:text="${locataire.prenom}"></td>
-                            <td th:text="${locataire.telephone}"></td>
-                            <td><a th:href="'/locataire/' + ${locataire.id}">Détails</a></td>
+                        <tr th:each="reparation : ${reparations}">
+                            <td th:text="${reparation.id}"></td>
+                            <td th:text="${reparation.description}"></td>
+                            <td th:text="${reparation.dateCreation}"></td>
+                            <td th:text="${reparation.dateFinalisation}"></td>
+                            <td th:text="${reparation.status}"></td>
+                            <td><a class="nav-item" th:href="'/appartement/'+${reparation.appartement.id}" th:text="${reparation.appartement.numeroPorte}"></a></td>
+                            <td><a class="nav-item" th:href="'/reparation/' + ${reparation.id}">Détails</a></td>
                         </tr>
                     </tbody>
                 </table>

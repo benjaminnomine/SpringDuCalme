@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org" lang="fr">
 <head>
-    <title>Création locataire</title>
+    <title>Création bail</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
     <link th:href="@{/fontawesome/css/all.min.css}" rel="stylesheet"/>
@@ -18,23 +18,29 @@
         </nav>
         <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
             <div class="row">
-                <form method="post" th:action="@{/locataire/addEdit}" th:object="${locataire}">
+                <form method="post" th:action="@{/bail/addEdit}" th:object="${bail}">
                     <div class="form-group">
-                        <label for="nom-field" class="col-form-label">Nom</label>
-                        <input class="form-control" id="nom-field" th:field="*{nom}" type="text" name="nom"/>
+                        <label for="signature-field" class="col-form-label">Date signature</label>
+                        <input class="form-control" id="signature-field" th:field="*{dateSignature}" type="date" name="dateSignature"/>
                     </div>
                     <div class="form-group">
-                        <label for="prenom-field">Prénom</label>
-                        <input class="form-control" id="prenom-field" th:field="*{prenom}" type="text" name="prenom"/>
+                        <label for="duree-field" class="col-form-label">Durée</label>
+                        <input class="form-control" id="duree-field" th:field="*{duree}" type="number" name="duree"/>
                     </div>
                     <div class="form-group">
-                        <label for="telephone-field">Téléphone</label>
-                        <input class="form-control" id="telephone-field" type="text" th:field="*{telephone}" name="telephone" />
+                        <label for="appartement-field">Appartement</label>
+                        <select class="form-control" id="appartement-field" th:field="*{appartement.id}">
+                            <option th:each="appartement : ${appartements}"
+                                    th:value="${appartement.id}"
+                                    th:utext="${appartement.numeroPorte}">
+                            </option>
+                        </select>
                     </div>
                     <input type="hidden" id="id" th:field="*{id}">
+                    <input type="hidden" id="locataireId" th:field="*{locataire.id}">
                     <label>
                         <input type="submit" class="btn btn-success" value="Soumettre"/>
-                        <a class="btn btn-danger pl-2" href="/locataire/index">Annuler</a>
+                        <a href="/bail/index" class="btn btn-danger pl-2">Annuler</a>
                     </label>
                 </form>
             </div>

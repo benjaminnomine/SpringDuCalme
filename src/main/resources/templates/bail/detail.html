@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org" lang="fr">
 <head>
-    <title>Appartements</title>
+    <title>Détail bail</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
     <link th:href="@{/fontawesome/css/all.min.css}" rel="stylesheet"/>
@@ -17,30 +17,33 @@
         <nav th:replace="fragments :: navbar">
         </nav>
         <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-            <div class="pb-2">
-                <a class="nav-item" href="/appartement/ajout">Ajout Appartement</a>
-            </div>
             <div>
+                <p>Voici les détails du bail sélectionné :</p>
                 <table class="table table-striped table-responsive">
                     <thead class="thead-dark">
                     <tr>
                         <th>Id</th>
-                        <th>Numéro de porte</th>
-                        <th>Surface</th>
-                        <th>Description</th>
+                        <th>Date signature</th>
+                        <th>Durée</th>
+                        <th>Numéro appartement</th>
+                        <th>Nom locataire</th>
                         <th></th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr th:each="appartement : ${appartements}">
-                        <td th:text="${appartement.id}"></td>
-                        <td th:text="${appartement.numeroPorte}"></td>
-                        <td th:text="${appartement.surface}"></td>
-                        <td th:text="${appartement.description}"></td>
-                        <td><a th:href="'/appartement/' + ${appartement.id}">Détails</a></td>
+                    <tr>
+                        <td th:text="${bail.id}"></td>
+                        <td th:text="${bail.dateSignature}"></td>
+                        <td th:text="${bail.duree}"></td>
+                        <td th:text="${bail.appartement.numeroPorte}"></td>
+                        <td th:text="${bail.locataire.nom}"></td>
+                        <td><a th:href="@{/bail/delete/{id}(id=${bail.id})}"><i class="fas fa-trash text-warning pr-2"></i>Supprimer</a> | <a th:href="@{/bail/update/{id}(id=${bail.id})}"><i class="fas fa-pen-fancy text-warning pr-2"></i><span th:text="#{modifier}"></span></a></td>
                     </tr>
                     </tbody>
                 </table>
+            </div>
+            <div>
+                <a href="/bail/index">Retour à la liste</a>
             </div>
         </main>
     </div>

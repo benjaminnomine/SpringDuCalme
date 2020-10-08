@@ -9,6 +9,8 @@ public class Appartement extends AbstractEntity {
 
     public String description;
     public double surface;
+    @Column(unique = true)
+    public String numeroPorte;
 
     @ManyToOne
     public TypeAppartement typeAppartement;
@@ -26,6 +28,14 @@ public class Appartement extends AbstractEntity {
     }
 
     public Appartement() { }
+
+    public String getNumeroPorte() {
+        return numeroPorte;
+    }
+
+    public void setNumeroPorte(String numeroPorte) {
+        this.numeroPorte = numeroPorte;
+    }
 
     public String getDescription() {
         return description;

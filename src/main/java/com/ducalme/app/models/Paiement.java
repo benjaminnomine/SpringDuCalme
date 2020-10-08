@@ -1,5 +1,7 @@
 package com.ducalme.app.models;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -8,6 +10,7 @@ public class Paiement extends AbstractEntity {
 
     @ManyToOne
     private Locataire locataire;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date datePaiement;
     private double montant;
 

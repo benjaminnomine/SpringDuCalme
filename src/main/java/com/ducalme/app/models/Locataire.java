@@ -7,13 +7,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(uniqueConstraints={
+        @UniqueConstraint(columnNames = {"nom", "prenom"}),
+        @UniqueConstraint(columnNames = "telephone")
+})
 public class Locataire extends AbstractEntity {
 
     @NotNull
     public String nom;
     @NotNull
     public String prenom;
-
+    @NotNull
     public String telephone;
 
     @OneToMany(mappedBy = "locataire")

@@ -4,10 +4,12 @@ import com.ducalme.app.controller.PaiementRepository;
 import com.ducalme.app.controller.ReparationRepository;
 import com.ducalme.app.models.Paiement;
 import com.ducalme.app.models.Reparation;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class ReparationService {
     private final ReparationRepository reparationRepository;
 

@@ -4,10 +4,12 @@ import com.ducalme.app.controller.LocataireRepositery;
 import com.ducalme.app.controller.PaiementRepository;
 import com.ducalme.app.models.Locataire;
 import com.ducalme.app.models.Paiement;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class PaiementService {
 
     private final PaiementRepository paiementRepository;

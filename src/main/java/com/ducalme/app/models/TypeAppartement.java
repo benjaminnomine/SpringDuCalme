@@ -10,6 +10,7 @@ public class TypeAppartement extends AbstractEntity {
     private String type;
 
     public TypeAppartement() { }
+    public String image;
 
     public String getType() {
         return type;
@@ -28,5 +29,13 @@ public class TypeAppartement extends AbstractEntity {
 
     public List<Appartement> getAppartementList() {
         return appartementList;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

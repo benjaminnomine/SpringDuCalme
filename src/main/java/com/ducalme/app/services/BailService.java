@@ -2,10 +2,12 @@ package com.ducalme.app.services;
 
 import com.ducalme.app.controller.BailRepository;
 import com.ducalme.app.models.Bail;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class BailService {
 
     private final BailRepository bailRepository;

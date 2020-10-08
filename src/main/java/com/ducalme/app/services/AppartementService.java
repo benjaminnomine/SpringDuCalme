@@ -2,10 +2,12 @@ package com.ducalme.app.services;
 
 import com.ducalme.app.controller.AppartementRepositery;
 import com.ducalme.app.models.Appartement;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class AppartementService {
 
     private final AppartementRepositery appartementRepositery;
