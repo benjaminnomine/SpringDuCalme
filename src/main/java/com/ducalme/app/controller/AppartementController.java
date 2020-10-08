@@ -23,14 +23,6 @@ public class AppartementController {
         this.typeAppartementService = typeAppartementService;
     }
 
-    @GetMapping("ajout")
-    public String addAppart(Model model) {
-        Appartement appartement = new Appartement();
-        model.addAttribute("appartement", appartement);
-        model.addAttribute("types", typeAppartementService.findAll());
-        return "appartement/create";
-    }
-
     @PostMapping("addEdit")
     private String insertOrUpdate(Appartement appartement, Model model){
         if(appartement.getId() == null){
@@ -46,6 +38,8 @@ public class AppartementController {
             }
         }
         List<Appartement> appartements = appartementService.findAll();
+        List<TypeAppartement> types = typeAppartementService.findAll();
+        model.addAttribute("types", types);
         model.addAttribute("appartements", appartements);
         return "appartement/index";
     }
@@ -64,10 +58,14 @@ public class AppartementController {
             Optional appartOptional = appartementService.findById(id.get());
             if(appartOptional.isPresent()) {
                 Appartement appartement = (Appartement) appartOptional.get();
+                List<TypeAppartement> types = typeAppartementService.findAll();
+                model.addAttribute("types", types);
                 model.addAttribute("appartement", appartement);
             }
         }else{
             Appartement appartement = new Appartement();
+            List<TypeAppartement> types = typeAppartementService.findAll();
+            model.addAttribute("types", types);
             model.addAttribute("appartement", appartement);
         }
         return "appartement/create";
