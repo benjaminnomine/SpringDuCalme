@@ -1,9 +1,9 @@
 package com.ducalme.app.controller;
 
-import com.ducalme.app.models.*;
+import com.ducalme.app.models.Appartement;
+import com.ducalme.app.models.TypeAppartement;
 import com.ducalme.app.services.AppartementService;
 import com.ducalme.app.services.TypeAppartementService;
-import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;

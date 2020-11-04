@@ -1,12 +1,11 @@
 package com.ducalme.app.controller;
 
-import com.ducalme.app.models.*;
+import com.ducalme.app.models.Locataire;
 import com.ducalme.app.services.LocataireService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
