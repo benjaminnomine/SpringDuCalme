@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.ducalme</groupId>
     <artifactId>ducalme</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2-SNAPSHOT</version>
     <name>DuCalme</name>
     <description>DuCalme MVC Java Spring Boot</description>
 
@@ -23,7 +23,7 @@
         <dependency>
             <groupId>com.ducalme</groupId>
             <artifactId>ducalme</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.0.2-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
