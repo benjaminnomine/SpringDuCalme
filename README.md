@@ -16,7 +16,9 @@ Java 3ème session, utilisation Spring boot
 
 # Base de données
 * H2
-* MongoDB (en cours de migration)
 
 # Screenshot
 :fire: à venir
+
+# Diagramme de classe UML
+![Diagramme de classe](https://raw.githubusercontent.com/benjaminnomine/SpringDuCalme/master/uml/models.png)
